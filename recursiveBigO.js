@@ -18,7 +18,7 @@ const countingSheep = function(flock) {
     } else {
       return (base * powerCalculator(base, (exponent - 1)));
     }
-  };
+  }; //O(log(n))
   console.log(powerCalculator(10, 3));
   
   // Reverse String
@@ -28,7 +28,7 @@ const countingSheep = function(flock) {
     } else {
       return str[str.length - 1] + reverseString(str.slice(0, (str.length - 1) ));
     }
-  };
+  }; //O(log(n))
   
   console.log(reverseString('Billy'));
   
@@ -37,7 +37,7 @@ const countingSheep = function(flock) {
       return 1;
     }
     return num + nthTriangular(num -1);
-  };
+  }; //O(n)
   
   console.log(nthTriangular(6));
   
@@ -51,7 +51,8 @@ const countingSheep = function(flock) {
           return [string.slice(0, sepIndex)].concat(stringSplitter(string.slice(sepIndex + separator.length), separator))
       }
   
-  } 
+  } //O(log(n)) 
+
   console.log(stringSplitter('16/45/2378', '/'))
   
   //Fibonacci 
@@ -64,7 +65,7 @@ const countingSheep = function(flock) {
       return 1;
     } else {
       return fibo(number - 1) + fibo(number - 2)};
-  };
+  };//O(1)
   
   const arr = []
   let fibNum = 5
@@ -73,7 +74,7 @@ const countingSheep = function(flock) {
           arr.push(fibo(i)) 
       } 
   
-  console.log(arr);
+  console.log(arr); //O(n)
   
   //Factorial
   const factorialFinder = function(num) {
@@ -82,6 +83,6 @@ const countingSheep = function(flock) {
       }
   
       return num * factorialFinder(num - 1)
-  }
+  } //O(log(n))
   
   console.log(factorialFinder(5))
