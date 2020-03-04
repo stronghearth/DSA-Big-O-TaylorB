@@ -1,23 +1,31 @@
 
 //TOH exercise
-function TOH(n, source, dest, temp) {
-    if(n===1) {
-        print(source, dest)
+function TOH(n, src, dest, temp) {
+    if(n === 1) {
+        print(src, dest)
     }
-    if(n===0) {
+    if(n === 0) {
         return;
     }
-    if (n > 2) {
-        print(temp, dest)
+    if (n === 2) { 
+        print(src, temp)
+        //TOH(n-1, src, dest, temp) <= <=
+        //         c   b     a
     }
-    TOH(n-1, source, temp, dest)
+    if (n === 3) {//brute force version
+        print(src, dest)
+        TOH(n-1, src, temp, dest)
+    }
+    TOH(n-1, temp, dest, src)
 }
 
 function print(a,b) {
     console.log(`moving ${a} to ${b}`)
 }
 
-//TOH(2, 1, 3, 2)
+//A => C TOH(n-1, )
+
+TOH(3, 1, 3, 2)
 
 //Exercise 12 comments are for exercise 14
 
